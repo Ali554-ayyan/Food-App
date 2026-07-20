@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Quick Bite Pro - Premium Restaurant & Food Ordering HTML Template. Handcrafted design, dark/light theme, interactive menu, cart, bookings, and tracking layouts.">
+  <title>Quick Bite Pro | Premium Restaurant HTML Template</title>
+  
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6.4.0 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ==================== PAGE PRELOADER ==================== -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <div class="loader-platter">
+        <i class="fa-solid fa-bell-concierge bell-icon"></i>
+        <div class="loader-circle"></div>
+      </div>
+      <h3>Preparing Deliciousness...</h3>
+    </div>
+  </div>
+  <!-- ==================== STICKY HEADER & NAVBAR ==================== -->
+  <header class="navbar">
+    <div class="container nav-wrapper">
+      <a href="#home" class="logo">
+        <span class="logo-spark">⚡</span>
+        <span class="logo-text">Quick<span class="accent-text">Bite</span><span class="badge-pro">PRO</span></span>
+      </a>
+      <!-- Navigation Links -->
+      <nav class="nav-links">
+        <a href="#home" class="nav-link active" data-view="home">Home</a>
+        <a href="#about" class="nav-link" data-view="about">About Us</a>
+        <a href="#menu" class="nav-link" data-view="menu">Menu</a>
+        <a href="#reserve" class="nav-link" data-view="reserve">Dine-In</a>
+        <a href="#blog" class="nav-link" data-view="blog">Blog</a>
+        <a href="#contact" class="nav-link" data-view="contact">Contact</a>
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link dropdown-trigger">Pages <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="dropdown-content">
+            <a href="#faq">FAQs</a>
+            <a href="#policy">Policies</a>
+            <a href="#auth">Login / Register</a>
+            <a href="#profile">My Profile</a>
+            <a href="#tracking">Track Order</a>
+            <a href="#invalid-route">404 Error Page</a>
+          </div>
+        </div>
+      </nav>
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="action-btn" aria-label="Toggle dark mode">
+          <i class="fa-solid fa-moon moon-icon"></i>
+          <i class="fa-solid fa-sun sun-icon hidden"></i>
+        </button>
+        <!-- Wishlist -->
+        <a href="#profile" onclick="activateProfileTab('wishlist')" class="action-btn" aria-label="Wishlist">
+          <i class="fa-solid fa-heart"></i>
+          <span class="wishlist-badge">0</span>
+        </a>
+        <!-- Shopping Cart Trigger -->
+        <button id="cart-btn" class="action-btn cart-trigger" aria-label="Open cart">
+          <i class="fa-solid fa-shopping-bag"></i>
+          <span class="cart-badge">0</span>
+        </button>
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- ==================== MAIN VIEW CONTAINER ==================== -->
+  <main id="app-view-container">
+    <!-- ==================== VIEW 1: HOME ==================== -->
+    <div class="page-view" id="view-home">
+      <!-- Hero Slider Section -->
+      <section class="hero-slider">
+        <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('assets/hero.png')">
+          <div class="container slide-content">
+            <span class="slide-tag">Welcome to Quick Bite Pro</span>
+            <h2>Savor the Art of <span class="accent-text">Premium Dining</span></h2>
+            <p>Experience exquisite, chef-crafted signature platters delivered to your doorstep in under 30 minutes. Fresh ingredients, bold flavors.</p>
+            <div class="slide-ctas">
+              <a href="#menu" class="btn btn-primary">Order Delivery</a>
+              <a href="#reserve" class="btn btn-outline">Reserve a Table</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Featured Categories Grid -->
+      <section class="home-categories py-100">
+        <div class="container">
+          <div class="section-header text-center">
+            <span class="subtitle">Quick Selection</span>
+            <h2 class="section-title">Explore Featured Categories</h2>
+          </div>
+          <div class="category-grid">
+            <a href="#menu" onclick="setMenuCategoryFilter('burgers')" class="cat-card">
+              <div class="cat-img-wrap">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&auto=format&fit=crop&q=80" alt="Juicy Gourmet Burger">
+              </div>
+              <h3>Burgers</h3>
+              <p>Juicy patties</p>
+            </a>
+            <a href="#menu" onclick="setMenuCategoryFilter('pizzas')" class="cat-card">
+              <div class="cat-img-wrap">
+                <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=200&auto=format&fit=crop&q=80" alt="Woodfired Pizza">
+              </div>
+              <h3>Pizzas</h3>
+              <p>Woodfired crust</p>
+            </a>
+            <a href="#menu" onclick="setMenuCategoryFilter('pasta')" class="cat-card">
+              <div class="cat-img-wrap">
+                <img src="https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=200&auto=format&fit=crop&q=80" alt="Creamy Pasta Alfredo">
+              </div>
+              <h3>Pasta</h3>
+              <p>Creamy alfredo</p>
+            </a>
+            <a href="#menu" onclick="setMenuCategoryFilter('bbq')" class="cat-card">
+              <div class="cat-img-wrap">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=200&auto=format&fit=crop&q=80" alt="Smokehouse BBQ Ribs">
+              </div>
+              <h3>BBQ</h3>
+              <p>Smokehouse ribs</p>
+            </a>
+            <a href="#menu" onclick="setMenuCategoryFilter('desserts')" class="cat-card">
+              <div class="cat-img-wrap">
+                <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=200&auto=format&fit=crop&q=80" alt="Chocolate Lava Dessert">
+              </div>
+              <h3>Desserts</h3>
+              <p>Sweet cravings</p>
+            </a>
+            <a href="#menu" onclick="setMenuCategoryFilter('drinks')" class="cat-card">
+              <div class="cat-img-wrap">
+                <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=200&auto=format&fit=crop&q=80" alt="Refreshing Beverages">
+              </div>
+              <h3>Beverages</h3>
+              <p>Fresh drinks</p>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- Today's Special Deals -->
+      <section class="special-deals py-100 bg-secondary">
+        <div class="container">
+          <div class="section-header text-center">
+            <span class="subtitle">Limited Time Offers</span>
+            <h2 class="section-title">Today's Gourmet Specials</h2>
+            <div class="countdown-timer">
+              <span>Ending in:</span>
+              <span id="countdown-hours" class="time-block">04</span>:
+              <span id="countdown-mins" class="time-block">18</span>:
+              <span id="countdown-secs" class="time-block">52</span>
+            </div>
+          </div>
+          <div class="deals-grid" id="today-specials-container">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+      </section>
+      <!-- Popular Dishes Section -->
+      <section class="popular-dishes py-100">
+        <div class="container">
+          <div class="section-header text-center">
+            <span class="subtitle">Chef Recommend</span>
+            <h2 class="section-title">Most Popular Plates</h2>
+          </div>
+          <div class="dishes-grid" id="popular-dishes-container">
+            <!-- Rendered via JS -->
+          </div>
+          <div class="text-center mt-50">
+            <a href="#menu" class="btn btn-primary">View Full Menu</a>
+          </div>
+        </div>
+      </section>
+      <!-- Why Choose Us Stats Strip -->
+      <section class="why-us-strip py-80">
+        <div class="container">
+          <div class="why-us-grid">
+            <div class="why-stat-item">
+              <div class="why-stat-icon"><i class="fa-solid fa-utensils"></i></div>
+              <div class="why-stat-num counter" data-target="250">0</div>
+              <div class="why-stat-label">Menu Dishes</div>
+            </div>
+            <div class="why-stat-item">
+              <div class="why-stat-icon"><i class="fa-solid fa-face-smile-beam"></i></div>
+              <div class="why-stat-num counter" data-target="18500">0</div>
+              <div class="why-stat-label">Happy Customers</div>
+            </div>
+            <div class="why-stat-item">
+              <div class="why-stat-icon"><i class="fa-solid fa-award"></i></div>
+              <div class="why-stat-num counter" data-target="42">0</div>
+              <div class="why-stat-label">Chef Awards Won</div>
+            </div>
+            <div class="why-stat-item">
+              <div class="why-stat-icon"><i class="fa-solid fa-motorcycle"></i></div>
+              <div class="why-stat-num counter" data-target="98">0</div>
+              <div class="why-stat-label">% On-time Delivery</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Testimonials -->
+      <section class="testimonials-section py-100 bg-secondary">
+        <div class="container">
+          <div class="section-header text-center">
+            <span class="subtitle">What Guests Say</span>
+            <h2 class="section-title">Voices From Our Table</h2>
+          </div>
+          <div class="testimonials-grid mt-50">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="testimonial-text">"The Truffle Mushroom Burger completely changed my understanding of what a burger can be. The white truffle oil drizzle is absolutely divine. Quick Bite Pro is now my weekly ritual."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">👨‍💼</div>
+                <div>
+                  <h4>James Thornton</h4>
+                  <p>Food Critic, Gourmet Weekly</p>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card featured-testimonial">
+              <div class="testimonial-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="testimonial-text">"I reserved a private cabin for my anniversary dinner and the experience was flawless. The garlic butter lobster tail paired with their wine selection was an unforgettable evening. Will definitely be back!"</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">👩</div>
+                <div>
+                  <h4>Sofia Reyes</h4>
+                  <p>Verified Dine-In Guest</p>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+              </div>
+              <p class="testimonial-text">"Delivery arrived in under 25 minutes and the Smokehouse Ribs were still perfectly warm. The live tracking feature is genius — I could follow my rider in real-time. Impressive service!"</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">👨</div>
+                <div>
+                  <h4>Daniel Okafor</h4>
+                  <p>Loyal App Customer, Lagos</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- App Download Section -->
+      <section class="app-download py-100 bg-secondary">
+        <div class="container app-grid">
+          <div class="app-visual">
+            <div class="phone-frame shadow-large">
+              <div class="phone-speaker"></div>
+              <div class="phone-screen">
+                <img src="assets/app_mockup.png" alt="Quick Bite Mobile App interface">
+              </div>
+              <div class="phone-home-btn"></div>
+            </div>
+          </div>
+          <div class="app-info">
+            <span class="subtitle">Quick Bite App</span>
+            <h2>Enjoy the Best Dining Experience on Mobile</h2>
+            <p>Download our mobile app to gain access to exclusive rewards club benefits, live rider GPS route mapping, smart meal recommendations, and secure express payouts.</p>
+            <div class="app-badges">
+              <a href="#" class="download-badge"><i class="fa-brands fa-apple"></i> Apple Store</a>
+              <a href="#" class="download-badge"><i class="fa-brands fa-google-play"></i> Google Play</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ==================== VIEW 2: ABOUT US ==================== -->
+    <div class="page-view hidden" id="view-about">
+      <section class="about-hero page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('assets/hero.png')">
+        <div class="container">
+          <h2>Our Story & Passion</h2>
+          <p><a href="#home">Home</a> / About Us</p>
+        </div>
+      </section>
+      <section class="about-story py-100">
+        <div class="container grid-2">
+          <div class="story-image">
+            <img src="assets/hero.png" alt="Cooking process close up" class="rounded-lg shadow-md">
+          </div>
+          <div class="story-content">
+            <span class="subtitle">Established 2012</span>
+            <h2>Serving Excellence For Over A Decade</h2>
+            <p>At Quick Bite Pro, our culinary philosophy centers on simplicity, fresh regional ingredients, and authentic gastronomy. Our passion is preparing chef-crafted plates that excite your tastebuds, combining traditional cooking arts with modern flavor twists.</p>
+            <blockquote class="accent-blockquote">
+              "Fine dining is not just about the food, but the unforgettable memory created at every bite."
+            </blockquote>
+            <ul class="about-perks">
+              <li><i class="fa-solid fa-check-circle accent"></i> 100% Organic Local Raw Produce</li>
+              <li><i class="fa-solid fa-check-circle accent"></i> Michelin-Starred Guest Chefs</li>
+              <li><i class="fa-solid fa-check-circle accent"></i> Eco-Friendly Biodegradable Packaging</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- Milestone Timeline -->
+      <section class="about-timeline py-100 bg-secondary">
+        <div class="container">
+          <div class="section-header text-center">
+            <span class="subtitle">Milestones</span>
+            <h2 class="section-title">Our Growth Timeline</h2>
+          </div>
+          <div class="timeline-wrapper">
+            <div class="timeline-item">
+              <div class="timeline-year">2012</div>
+              <div class="timeline-desc">First boutique eatery opened in Food City by founder Chef Antonio.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2016</div>
+              <div class="timeline-desc">Expanded to 5 locations and launched our first regional delivery fleet.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2020</div>
+              <div class="timeline-desc">Launched the Quick Bite mobile app, serving over 100,000 customers.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2026</div>
+              <div class="timeline-desc">Ranked as the #1 Fastest Premium Food Service Brand nationally.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Our Chefs -->
+      <section class="our-chefs py-100">
+        <div class="container">
+          <div class="section-header text-center">
+            <span class="subtitle">Culinary Masters</span>
+            <h2 class="section-title">Meet Our Executive Chefs</h2>
+          </div>
+          <div class="chefs-grid">
+            <div class="chef-card">
+              <div class="chef-img-wrap">
+                <span class="chef-emoji">👨‍🍳</span>
+              </div>
+              <div class="chef-info">
+                <h3>Chef Antonio Vance</h3>
+                <p>Founder & Head Culinary Director</p>
+                <div class="chef-socials">
+                  <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="chef-card">
+              <div class="chef-img-wrap">
+                <span class="chef-emoji">👩‍🍳</span>
+              </div>
+              <div class="chef-info">
+                <h3>Chef Linette Morel</h3>
+                <p>Master Pastry Chef & Designer</p>
+                <div class="chef-socials">
+                  <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="chef-card">
+              <div class="chef-img-wrap">
+                <span class="chef-emoji">👨‍🍳</span>
+              </div>
+              <div class="chef-info">
+                <h3>Chef Marcus Sterling</h3>
+                <p>Grill & BBQ Pitmaster Expert</p>
+                <div class="chef-socials">
+                  <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ==================== VIEW 3: MENU ==================== -->
+    <div class="page-view hidden" id="view-menu">
+      <section class="menu-hero page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('assets/hero.png')">
+        <div class="container">
+          <h2>Chef's Craft Menu</h2>
+          <p><a href="#home">Home</a> / Menu Selection</p>
+        </div>
+      </section>
+      <section class="menu-explorer py-100">
+        <div class="container menu-explorer-grid">
+          <!-- Filter Sidebar -->
+          <aside class="menu-filters-sidebar">
+            <div class="filter-widget">
+              <h3>Search Dishes</h3>
+              <div class="search-input-wrap">
+                <input type="text" id="menu-view-search" placeholder="Type name or ingredient...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+            </div>
+            
+            <div class="filter-widget">
+              <h3>Sort By</h3>
+              <select id="menu-view-sort">
+                <option value="popularity">Popularity (Default)</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="prep-time">Preparation Time</option>
+                <option value="calories">Calorie Count</option>
+              </select>
+            </div>
+            <div class="filter-widget">
+              <h3>Filter By Price</h3>
+              <div class="range-values">
+                <span id="price-min-val">$0</span>
+                <span id="price-max-val">$35</span>
+              </div>
+              <input type="range" id="menu-view-price" min="0" max="35" value="35">
+            </div>
+            <div class="filter-widget">
+              <h3>Filter By Prep Time</h3>
+              <select id="menu-view-preptime">
+                <option value="any">Any Duration</option>
+                <option value="10">Under 10 mins</option>
+                <option value="15">Under 15 mins</option>
+                <option value="20">Under 20 mins</option>
+                <option value="30">Under 30 mins</option>
+              </select>
+            </div>
+          </aside>
+          <!-- Main Grid -->
+          <div class="menu-main-content">
+            <div class="menu-categories-tabs" id="menu-category-tabs-container">
+              <!-- Rendered Dynamically -->
+            </div>
+            <div class="menu-results-meta">
+              <span id="menu-results-count">Showing 25 items</span>
+              <button id="menu-reset-filters" class="btn-text">Clear All Filters</button>
+            </div>
+            <div class="dishes-grid" id="menu-view-grid">
+              <!-- Rendered Dynamically -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ==================== VIEW 4: PRODUCT DETAILS ==================== -->
+    <div class="page-view hidden" id="view-detail">
+      <section class="page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('assets/hero.png')">
+        <div class="container">
+          <h2>Dish Customization</h2>
+          <p><a href="#home">Home</a> / <a href="#menu">Menu</a> / Food Details</p>
+        </div>
+      </section>
+      <section class="product-details-wrap py-100">
+        <div class="container" id="product-detail-page-container">
+          <!-- Dynamic details content injected via JS -->
+        </div>
+      </section>
+    </div>
+    <!-- ==================== VIEW 5: TABLE RESERVATION ==================== -->
+    <div class="page-view hidden" id="view-reserve">
+      <section class="reserve-hero page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('assets/hero.png')">
+        <div class="container">
+          <h2>Table Reservations</h2>
+          <p><a href="#home">Home</a> / Book A Table</p>
+        </div>
+      </section>
+      <section class="reservation-form-section py-100">
+        <div class="container reserve-grid">
+          <div class="reserve-promo">
+            <span class="subtitle">Elegant Dining Rooms</span>
+            <h2>Book Your Gourmet Table Experience</h2>
+            <p>Celebrate birthdays, executive business dinners, family lunches, or romantic couples dates inside our cozy, dim-lit dining areas or open garden terraces.</p>
+            <div class="reserve-contact-points">
+              <div class="point-item">
+                <i class="fa-solid fa-map-location-dot accent"></i>
+                <div>
+                  <h4>Eatery Address</h4>
+                  <p>123 Gourmet Ave, Food City</p>
+                </div>
+              </div>
+              <div class="point-item">
+                <i class="fa-solid fa-headset accent"></i>
+                <div>
+                  <h4>Phone Support</h4>
+                  <p>+1 (555) 123-4567 (10am - 11pm)</p>
+                </div>
+              </div>
+              <div class="point-item">
+                <i class="fa-solid fa-clock accent"></i>
+                <div>
+                  <h4>Opening Hours</h4>
+                  <p>Mon - Sun: 10:00 AM - 11:00 PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reserve-form-card shadow-large">
+            <h3>Online Reservations</h3>
+            <p>Vouchers are processed instantly.</p>
+            <form id="pro-reservation-form">
+              <div class="form-group">
+                <label for="pro-name">Full Name</label>
+                <div class="input-icon-wrap">
+                  <i class="fa-solid fa-user"></i>
+                  <input type="text" id="pro-name" required placeholder="Full Name">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="pro-email">Email Address</label>
+                  <div class="input-icon-wrap">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="pro-email" required placeholder="Email Address">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="pro-phone">Phone Number</label>
+                  <div class="input-icon-wrap">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="tel" id="pro-phone" required placeholder="Phone Number">
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="pro-date">Date</label>
+                  <div class="input-icon-wrap">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <input type="date" id="pro-date" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="pro-time">Time</label>
+                  <div class="input-icon-wrap">
+                    <i class="fa-solid fa-clock"></i>
+                    <input type="time" id="pro-time" required>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="pro-guests">Number of Guests</label>
+                  <div class="input-icon-wrap">
+                    <i class="fa-solid fa-users-group"></i>
+                    <select id="pro-guests">
+                      <option value="2">2 People</option>
+                      <option value="4">4 People</option>
+                      <option value="6">6 People</option>
+                      <option value="8">8+ People</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="pro-seating">Seating Preference</label>
+                  <div class="input-icon-wrap">
+                    <i class="fa-solid fa-chair"></i>
+                    <select id="pro-seating">
+                      <option value="Standard">Standard Dining</option>
+                      <option value="Window Side">Window Side</option>
+                      <option value="Outdoor Terrace">Outdoor Garden Terrace</option>
+                      <option value="Private VIP Lounge">Private VIP Cabin</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="pro-requests">Special Requests / Allergies</label>
+                <textarea id="pro-requests" placeholder="Allergies, high chair, birthday decoration, etc..." rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Confirm Reservation</button>
+            </form>
+            <!-- Success reservation receipt overlay -->
+            <div id="pro-reservation-success" class="booking-receipt-overlay hidden">
+              <div class="receipt-icon"><i class="fa-solid fa-circle-check"></i></div>
+              <h3>Table Booked!</h3>
+              <p>Below is your digital dining reservation coupon receipt:</p>
+              <div class="receipt-box" id="pro-reservation-receipt-box">
+                <!-- JS generated receipt -->
+              </div>
+              <button type="button" id="btn-reset-reserve" class="btn btn-secondary btn-sm">Reserve Another Table</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ==================== VIEW 6: BLOGS LIST ==================== -->
+    <div class="page-view hidden" id="view-blog">
+      <section class="blog-hero page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('assets/hero.png')">
+        <div class="container">
+          <h2>Food Culture Blog</h2>
+          <p><a href="#home">Home</a> / Culinary Blogs</p>
+        </div>
+      </section>
+      <section class="blog-index py-100">
+        <div class="container">
+          <div class="blog-grid" id="blogs-list-container">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ==================== VIEW 7: BLOG DETAILS ==================== -->
+    <div class="page-view hidden" id="view-blog-detail">
+      <section class="page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('assets/hero.png')">
+        <div class="container">
+          <h2>Blog Reader</h2>
+          <p><a href="#home">Home</a> / <a href="#blog">Blog</a> / Post Detail</p>
+        </div>
+      </section>
+      <section class="blog-detail-section py-100">
+        <div class="container" id="blog-detail-content-container">
+          <!-- Injected via JS -->
+        </div>
+      </section>
+    </div>
+    <!-- ==================== VIEW 8: AUTHENTICATION ==================== -->
+    <div class="page-view hidden" id="view-auth">
+      <section class="page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('assets/hero.png')">
+        <div class="container">
+          <h2>Customer Account</h2>
+          <p><a href="#home">Home</a> / Portal Gateway</p>
+        </div>
+      </section>
+      <section class="auth-section py-100">
+        <div class="container auth-wrapper">
+          <div class="auth-tabs">
+            <button class="auth-tab-btn active" onclick="switchAuthTab('login')">Sign In</button>
+            <button class="auth-tab-btn" onclick="switchAuthTab('register')">Sign Up</button>
+          </div>
+          <!-- Login form panel -->
+          <div class="auth-panel" id="auth-panel-login">
+            <h3>Access Your Profile</h3>
+            <p class="panel-subtitle">Welcome back! Sign in to order faster.</p>
+            <form id="auth-login-form">
+              <div class="form-group">
+                <label for="login-email">Email Address</label>
+                <input type="email" id="login-email" required placeholder="name@email.com">
+              </div>
+              <div class="form-group">
+                <label for="login-pass">Password</label>
+                <input type="password" id="login-pass" required placeholder="••••••••">
+              </div>
+              <div class="auth-forgot-row">
+                <label class="checkbox-label">
+                  <input type="checkbox"> Remember Me
+                </label>
+                <button type="button" onclick="switchAuthTab('forgot')" class="forgot-link">Forgot Password?</button>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            </form>
+          </div>
+          <!-- Register form panel -->
+          <div class="auth-panel hidden" id="auth-panel-register">
+            <h3>Join Quick Bite Club</h3>
+            <p class="panel-subtitle">Register to collect loyalty points on every order.</p>
+            <form id="auth-register-form">
+              <div class="form-group">
+                <label for="reg-name">Full Name</label>
+                <input type="text" id="reg-name" required placeholder="John Doe">
+              </div>
+              <div class="form-group">
+                <label for="reg-email">Email Address</label>
+                <input type="email" id="reg-email" required placeholder="name@email.com">
+              </div>
+              <div class="form-group">
+                <label for="reg-pass">Create Password</label>
+                <input type="password" id="reg-pass" required placeholder="••••••••">
+              </div>
+              <label class="checkbox-label mb-20">
+                <input type="checkbox" required> I agree to the Terms & Privacy Policies.
+              </label>
+              <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+            </form>
+          </div>
+          <!-- Forgot Password panel -->
+          <div class="auth-panel hidden" id="auth-panel-forgot">
+            <h3>Retrieve Password</h3>
+            <p class="panel-subtitle">Enter your email and we will send recovery instructions.</p>
+            <form id="auth-forgot-form">
+              <div class="form-group">
+                <label for="forgot-email">Email Address</label>
+                <input type="email" id="forgot-email" required placeholder="name@email.com">
+              </div>
+              <button type="submit" class="btn btn-primary btn-block mb-20">Send Recovery Link</button>
+              <button type="button" onclick="switchAuthTab('login')" class="btn-back-login"><i class="fa-solid fa-arrow-left"></i> Back to Sign In</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ==================== VIEW 9: USER PROFILE ==================== -->
+    <div class="page-view hidden" id="view-profile">
+      <section class="page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('assets/hero.png')">
+        <div class="container">
+          <h2>Member Profile</h2>
+          <p><a href="#home">Home</a> / User Dashboard</p>
+        </div>
+      </section>
+      <section class="profile-section py-100">
+        <div class="container profile-grid">
+          <!-- Profile Sidebar navigation -->
+          <aside class="profile-sidebar shadow-medium">
+            <div class="profile-user-head">
+              <div class="user-avatar-placeholder">👨</div>
+              <div class="user-meta-info">
+                <h3 id="user-display-name">Demo User</h3>
+                <p>Quick Bite Club Gold Member</p>
+              </div>
+            </div>
+            <nav class="profile-menu">
+              <button class="profile-menu-link active" onclick="switchProfileTab('dashboard')"><i class="fa-solid fa-gauge"></i> Dashboard</button>
+              <button class="profile-menu-link" onclick="switchProfileTab('orders')"><i class="fa-solid fa-receipt"></i> Order History</button>
+              <button class="profile-menu-link" onclick="switchProfileTab('wishlist')"><i class="fa-solid fa-heart"></i> My Wishlist</button>
+              <button class="profile-menu-link" onclick="switchProfileTab('settings')"><i class="fa-solid fa-sliders"></i> Account Settings</button>
+              <button class="profile-menu-link logout-link" onclick="handleMockLogout()"><i class="fa-solid fa-sign-out-alt"></i> Sign Out</button>
+            </nav>
+          </aside>
+          <!-- Profile content area -->
+          <div class="profile-main-content">
+            <!-- Tab: Dashboard -->
+            <div class="profile-tab-content" id="profile-tab-dashboard">
+              <h2>Account Dashboard</h2>
+              <p>Welcome back! Monitor your recent orders, adjust billing presets, and view rewards points.</p>
+              <div class="dashboard-stats-grid">
+                <div class="stat-card">
+                  <div class="stat-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                  <div class="stat-num">14</div>
+                  <p>Total Orders</p>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
+                  <div class="stat-num">1,240</div>
+                  <p>Loyalty Points</p>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon"><i class="fa-solid fa-wallet"></i></div>
+                  <div class="stat-num">$28.50</div>
+                  <p>Quick Wallet Balance</p>
+                </div>
+              </div>
+              <h3 class="mt-40">Recent Activity</h3>
+              <div class="table-responsive mt-15">
+                <table class="table-order-history">
+                  <thead>
+                    <tr>
+                      <th>Order ID</th>
+                      <th>Date</th>
+                      <th>Total Amount</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>ORD-29910</td>
+                      <td>2026-07-09</td>
+                      <td>$34.45</td>
+                      <td><span class="status-badge delivered">Delivered</span></td>
+                      <td><a href="#tracking" class="btn btn-secondary btn-sm" style="padding: 4px 10px;">Track</a></td>
+                    </tr>
+                    <tr>
+                      <td>ORD-29801</td>
+                      <td>2026-07-02</td>
+                      <td>$12.99</td>
+                      <td><span class="status-badge delivered">Delivered</span></td>
+                      <td><a href="#tracking" class="btn btn-secondary btn-sm" style="padding: 4px 10px;">Track</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- Tab: Order History -->
+            <div class="profile-tab-content hidden" id="profile-tab-orders">
+              <h2>Order History</h2>
+              <p>Review all your previous orders, print invoices, or track active dispatches.</p>
+              <div class="table-responsive mt-20">
+                <table class="table-order-history">
+                  <thead>
+                    <tr>
+                      <th>Order ID</th>
+                      <th>Date</th>
+                      <th>Billing Total</th>
+                      <th>Status</th>
+                      <th>Courier Route</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>ORD-29910</td>
+                      <td>2026-07-09</td>
+                      <td>$34.45</td>
+                      <td><span class="status-badge delivered">Delivered</span></td>
+                      <td><a href="#tracking" class="btn-text">Track Route</a></td>
+                    </tr>
+                    <tr>
+                      <td>ORD-29801</td>
+                      <td>2026-07-02</td>
+                      <td>$12.99</td>
+                      <td><span class="status-badge delivered">Delivered</span></td>
+                      <td><a href="#tracking" class="btn-text">Track Route</a></td>
+                    </tr>
+                    <tr>
+                      <td>ORD-29750</td>
+                      <td>2026-06-28</td>
+                      <td>$48.20</td>
+                      <td><span class="status-badge cancelled">Cancelled</span></td>
+                      <td>-</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- Tab: Wishlist -->
+            <div class="profile-tab-content hidden" id="profile-tab-wishlist">
+              <h2>My Gourmet Wishlist</h2>
+              <p>Bookmark your signature dishes to quickly add them to your shopping bag later.</p>
+              <div class="dishes-grid mt-20" id="profile-wishlist-container">
+                <!-- Rendered dynamically -->
+              </div>
+            </div>
+            <!-- Tab: Settings -->
+            <div class="profile-tab-content hidden" id="profile-tab-settings">
+              <h2>Account Settings</h2>
+              <p>Modify personal coordinates, updates passwords, and configure default delivery locations.</p>
+              <form class="mt-20" id="profile-settings-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="settings-name" value="Demo User">
+                  </div>
+                  <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="settings-phone" value="+1 (555) 000-1111">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Delivery Address</label>
+                  <input type="text" id="settings-address" value="456 Residential Avenue, Suite 10, Food City">
+                </div>
+                <hr class="settings-divider">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>New Password</label>
+                    <input type="password" id="settings-new-pass" placeholder="••••••••">
+                  </div>
+                  <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" id="settings-confirm-pass" placeholder="••••••••">
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Save Profiles Settings</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ==================== VIEW 10: SHOPPING CART ==================== -->
+    <div class="page-view hidden" id="view-cart">
+      <section class="page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('assets/hero.png')">
+        <div class="container">
+          <h2>Shopping Bag</h2>
+          <p><a href="#home">Home</a> / Checkout Bag</p>
+        </div>
+      </section>
+      <section class="cart-page-section py-100">
+        <div class="container cart-page-grid" id="cart-page-container">
+          <!-- Injected dynamically via JS -->
+        </div>
+      </section>
+    </div>
+    <!-- ==================== VIEW 11: CHECKOUT ==================== -->
+    <div class="page-view hidden" id="view-checkout">
+      <section class="page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('assets/hero.png')">
+        <div class="container">
+          <h2>Secure Checkout</h2>
+          <p><a href="#home">Home</a> / <a href="#cart">Bag</a> / Payment Processing</p>
+        </div>
+      </section>
+      <section class="checkout-page-section py-100">
+        <div class="container checkout-grid">
+          <!-- Checkout forms -->
+          <div class="checkout-forms-column">
+            <div class="checkout-card shadow-medium">
+              <h3>1. Shipping Coordinates</h3>
+              <form id="checkout-shipping-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="ship-first">First Name</label>
+                    <input type="text" id="ship-first" required value="Demo">
+                  </div>
+                  <div class="form-group">
+                    <label for="ship-last">Last Name</label>
+                    <input type="text" id="ship-last" required value="User">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="ship-email">Email Address</label>
+                    <input type="email" id="ship-email" required value="demouser@email.com">
+                  </div>
+                  <div class="form-group">
+                    <label for="ship-phone">Phone Number</label>
+                    <input type="tel" id="ship-phone" required value="+1 (555) 000-1111">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="ship-address">Street Delivery Address</label>
+                  <input type="text" id="ship-address" required value="456 Residential Avenue, Suite 10, Food City">
+                </div>
+              </form>
+            </div>
+            <!-- Payment gateway selection -->
+            <div class="checkout-card shadow-medium mt-30">
+              <h3>2. Choose Payment Method</h3>
+              <p class="card-subtitle">Select card or mobile wallet (UI design mock only).</p>
+              
+              <div class="payment-methods-selector">
+                <label class="payment-method-option active">
+                  <input type="radio" name="pay-method" value="cod" checked>
+                  <div class="pay-method-meta">
+                    <span class="pay-title"><i class="fa-solid fa-truck-ramp-box"></i> Cash On Delivery</span>
+                    <span class="pay-desc">Pay in cash or card upon delivery agent arrival.</span>
+                  </div>
+                </label>
+                <label class="payment-method-option">
+                  <input type="radio" name="pay-method" value="card">
+                  <div class="pay-method-meta">
+                    <span class="pay-title"><i class="fa-solid fa-credit-card"></i> Credit / Debit Card</span>
+                    <span class="pay-desc">Visa, MasterCard, or American Express.</span>
+                  </div>
+                </label>
+                <label class="payment-method-option">
+                  <input type="radio" name="pay-method" value="easypaisa">
+                  <div class="pay-method-meta">
+                    <span class="pay-title"><i class="fa-solid fa-wallet"></i> EasyPaisa Wallet</span>
+                    <span class="pay-desc">Confirm using your mobile account.</span>
+                  </div>
+                </label>
+                <label class="payment-method-option">
+                  <input type="radio" name="pay-method" value="jazzcash">
+                  <div class="pay-method-meta">
+                    <span class="pay-title"><i class="fa-solid fa-wallet"></i> JazzCash Wallet</span>
+                    <span class="pay-desc">Quick validation via mobile pin code.</span>
+                  </div>
+                </label>
+                <label class="payment-method-option">
+                  <input type="radio" name="pay-method" value="paypal">
+                  <div class="pay-method-meta">
+                    <span class="pay-title"><i class="fa-brands fa-paypal"></i> PayPal Gateway</span>
+                    <span class="pay-desc">Worldwide express secure payment.</span>
+                  </div>
+                </label>
+              </div>
+              <!-- Credit Card Fields Layout (Hidden by default unless selected) -->
+              <div id="credit-card-fields-box" class="credit-card-fields mt-20 hidden">
+                <div class="form-group">
+                  <label>Cardholder Name</label>
+                  <input type="text" placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                  <label>Card Number</label>
+                  <input type="text" placeholder="xxxx-xxxx-xxxx-xxxx">
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Expiration Date</label>
+                    <input type="text" placeholder="MM/YY">
+                  </div>
+                  <div class="form-group">
+                    <label>CVV/CVC</label>
+                    <input type="password" placeholder="***">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Billing Recap sidebar -->
+          <div class="checkout-billing-column">
+            <div class="checkout-card shadow-medium" id="checkout-recap-box">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ==================== VIEW 12: ORDER TRACKING ==================== -->
+    <div class="page-view hidden" id="view-tracking">
+      <section class="page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('assets/hero.png')">
+        <div class="container">
+          <h2>Live Dispatch Tracking</h2>
+          <p><a href="#home">Home</a> / Dispatch GPS Tracker</p>
+        </div>
+      </section>
+      <section class="tracking-section py-100">
+        <div class="container tracking-wrapper shadow-large">
+          <div class="tracking-header">
+            <div>
+              <h3>Order ID: <span class="accent-text" id="track-order-id">ORD-29910</span></h3>
+              <p>Courier Mode: Standard Express Moto Dispatch</p>
+            </div>
+            <div class="text-right">
+              <h3>Estimated Arrival</h3>
+              <h2 class="accent-text" id="track-order-eta">In 24 minutes</h2>
+            </div>
+          </div>
+          <!-- Progressive timeline track -->
+          <div class="timeline-progress-bar">
+            <div class="progress-line-fill" id="track-progress-fill" style="width: 25%;"></div>
+            
+            <div class="progress-node active" id="node-received">
+              <div class="node-num"><i class="fa-solid fa-receipt"></i></div>
+              <div class="node-label">Order Received</div>
+            </div>
+            <div class="progress-node" id="node-preparing">
+              <div class="node-num"><i class="fa-solid fa-kitchen-set"></i></div>
+              <div class="node-label">Preparing Ingredients</div>
+            </div>
+            <div class="progress-node" id="node-cooking">
+              <div class="node-num"><i class="fa-solid fa-fire-burner"></i></div>
+              <div class="node-label">Chef Cooking</div>
+            </div>
+            <div class="progress-node" id="node-transit">
+              <div class="node-num"><i class="fa-solid fa-motorcycle"></i></div>
+              <div class="node-label">Out for Delivery</div>
+            </div>
+            <div class="progress-node" id="node-arrived">
+              <div class="node-num"><i class="fa-solid fa-house-chimney-check"></i></div>
+              <div class="node-label">Arrived</div>
+            </div>
+          </div>
+          <div class="tracking-grid py-40">
+            <div class="courier-profile-card">
+              <div class="courier-avatar">🏍️</div>
+              <div class="courier-meta">
+                <h4>Alex Rodriguez</h4>
+                <p>Quick Bite Certified Rider</p>
+                <div class="courier-stars">
+                  <i class="fa-solid fa-star"></i> 4.9 (420 deliveries)
+                </div>
+              </div>
+              <a href="tel:+15559876543" class="btn btn-outline btn-sm" style="margin-left: auto;"><i class="fa-solid fa-phone"></i> Call Agent</a>
+            </div>
+            <div class="delivery-address-summary">
+              <h4>Delivery Point</h4>
+              <p>456 Residential Avenue, Suite 10, Food City</p>
+              <h4 class="mt-15">Kitchen Origin</h4>
+              <p>123 Gourmet Ave, Food City Branch</p>
+            </div>
+          </div>
+          <!-- Mock Map UI -->
+          <div class="mock-map-box">
+            <div class="map-bg-grid"></div>
+            <div class="map-route-line"></div>
+            <div class="map-marker origin"><i class="fa-solid fa-store"></i></div>
+            <div class="map-marker destination"><i class="fa-solid fa-house-user"></i></div>
+            <div class="map-marker courier" id="map-courier-marker"><i class="fa-solid fa-motorcycle"></i></div>
+            <div class="map-overlay-instructions">
+              <i class="fa-solid fa-location-crosshairs icon-pulse"></i> Live route telemetry synchronized.
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ==================== VIEW 13: FAQS ==================== -->
+    <div class="page-view hidden" id="view-faq">
+      <section class="page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('assets/hero.png')">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
+          <p><a href="#home">Home</a> / Help FAQ Center</p>
+        </div>
+      </section>
+      <section class="faq-section py-100">
+        <div class="container" style="max-width: 800px;">
+          <div class="section-header text-center">
+            <span class="subtitle">Quick Clarifications</span>
+            <h2>Got Questions? We Have Answers</h2>
+          </div>
+          <div class="accordion-group mt-40">
+            <div class="faq-accordion-item">
+              <button class="faq-question">What are your standard delivery hours?</button>
+              <div class="faq-answer">
+                <p>We deliver daily from 10:00 AM to 11:00 PM. Orders placed after 10:30 PM will be processed for the following morning schedule.</p>
+              </div>
+            </div>
+            <div class="faq-accordion-item">
+              <button class="faq-question">How does table reservation pre-ordering work?</button>
+              <div class="faq-answer">
+                <p>When booking a reservation through our portal, you can navigate to the menu, add items to your wishlist/order list, and click "Pre-Order". We will coordinate preparation to match your table seating time exactly.</p>
+              </div>
+            </div>
+            <div class="faq-accordion-item">
+              <button class="faq-question">What payment methods do you support?</button>
+              <div class="faq-answer">
+                <p>We support Credit/Debit Card payments, EasyPaisa, JazzCash, PayPal, and Cash on Delivery at your doorstep.</p>
+              </div>
+            </div>
+            <div class="faq-accordion-item">
+              <button class="faq-question">Are there allergy disclosures for menu items?</button>
+              <div class="faq-answer">
+                <p>Yes. Each menu item features ingredient list summaries and warning tags (e.g. contains dairy, nuts, gluten). You can also include custom allergy instructions during reservation or checkout.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ==================== VIEW 14: POLICIES ==================== -->
+    <div class="page-view hidden" id="view-policy">
+      <section class="page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('assets/hero.png')">
+        <div class="container">
+          <h2>Terms & Brand Policies</h2>
+          <p><a href="#home">Home</a> / Brand Guidelines</p>
+        </div>
+      </section>
+      <section class="policy-section py-100">
+        <div class="container policy-tabs-wrapper">
+          <div class="policy-tabs-nav">
+            <button class="policy-tab-btn active" onclick="switchPolicyTab('privacy')">Privacy Policy</button>
+            <button class="policy-tab-btn" onclick="switchPolicyTab('terms')">Terms & Conditions</button>
+            <button class="policy-tab-btn" onclick="switchPolicyTab('delivery')">Delivery Policy</button>
+          </div>
+          <div class="policy-content-box shadow-medium">
+            <!-- Privacy Tab -->
+            <div class="policy-tab-pane" id="policy-pane-privacy">
+              <h3>Privacy Protection Policy</h3>
+              <p>Last modified: July 10, 2026</p>
+              <p>We respect customer privacy boundaries. Personal parameters captured during reservation coordinates, checkout addresses, or email signups are saved in secure encrypted spaces and are never distributed to secondary marketing networks.</p>
+              <h4 class="mt-20">Data We Collect</h4>
+              <p>We collect name profiles, telephone coordinates, delivery address locations, and order logs to coordinate deliveries and bookings.</p>
+            </div>
+            <!-- Terms Tab -->
+            <div class="policy-tab-pane hidden" id="policy-pane-terms">
+              <h3>General Terms & Conditions</h3>
+              <p>Last modified: July 10, 2026</p>
+              <p>By using the Quick Bite Pro portal or downloading our application files, you agree to comply with standard service protocols. All menu listings, prices, promotions, and delivery durations are subject to change based on kitchen ingredient sourcing cycles.</p>
+            </div>
+            <!-- Delivery Tab -->
+            <div class="policy-tab-pane hidden" id="policy-pane-delivery">
+              <h3>Express Dispatch Delivery Policy</h3>
+              <p>Last modified: July 10, 2026</p>
+              <p>We guarantee hot food delivery in under 30 minutes for locations within a 5-mile boundary of our kitchen branches. If transit delay parameters exceed 45 minutes without emergency weather blocks, you will receive a 50% discount voucher coupon.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ==================== VIEW 15: CONTACT US ==================== -->
+    <div class="page-view hidden" id="view-contact">
+      <section class="page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('assets/hero.png')">
+        <div class="container">
+          <h2>Contact & FAQ</h2>
+          <p><a href="#home">Home</a> / Contact Us</p>
+        </div>
+      </section>
+      <section class="contact-section py-100">
+        <div class="container grid-2">
+          <div class="contact-form-card shadow-medium">
+            <h3>Get In Touch</h3>
+            <p>Send a message and our support desk will respond in under 2 hours.</p>
+            <form class="mt-20" id="contact-form-submit">
+              <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" required placeholder="Full Name">
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" required placeholder="name@email.com">
+              </div>
+              <div class="form-group">
+                <label>Message Content</label>
+                <textarea required placeholder="Write your message here..." rows="4"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+          <div class="contact-info-panel">
+            <h3>Operating Head Office</h3>
+            <p class="mt-15">Quick Bite Pro corporate office coordinates and customer support centers.</p>
+            <ul class="contact-details-list mt-30">
+              <li><i class="fa-solid fa-map-pin accent"></i> 123 Gourmet Ave, Food City</li>
+              <li><i class="fa-solid fa-envelope accent"></i> corporate@quickbitepro.com</li>
+              <li><i class="fa-solid fa-phone accent"></i> +1 (555) 123-4567</li>
+            </ul>
+            <!-- Google Map Mock -->
+            <div class="map-placeholder mt-35 rounded-lg shadow-sm">
+              <div class="map-canvas-mock">
+                <i class="fa-solid fa-map-location icon-bounce"></i>
+                <h4>Interactive Location Map Mockup</h4>
+                <p>123 Gourmet Ave, Food City</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ==================== VIEW 16: 404 PAGE ==================== -->
+    <div class="page-view hidden" id="view-404">
+      <section class="error-section text-center py-100">
+        <div class="container">
+          <div class="error-graphics">404</div>
+          <h2 class="mt-20">Whoops! Dish Not Found</h2>
+          <p class="section-subtitle text-center mt-10">We searched our pantry but couldn't find the page or platter you are looking for. It might have been devoured or moved to another link.</p>
+          <a href="#home" class="btn btn-primary mt-30">Back To Homepage</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <!-- ==================== COMPREHENSIVE FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-top-grid py-80">
+      <div class="footer-col brand-col">
+        <a href="#home" class="logo mb-20">
+          <span class="logo-spark">⚡</span>
+          <span class="logo-text text-light">Quick<span class="accent-text">Bite</span></span>
+        </a>
+        <p class="mb-25">Handcrafted premium culinary experiences prepared by Michelin-starred masters and delivered with lightning speed.</p>
+        <div class="footer-social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Useful Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#menu">Our Menu</a></li>
+          <li><a href="#reserve">Table Booking</a></li>
+          <li><a href="#blog">Blog Articles</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Policies & Help</h3>
+        <ul>
+          <li><a href="#faq">Frequently FAQs</a></li>
+          <li><a href="#policy">Privacy Policy</a></li>
+          <li><a href="#policy">Terms & Conditions</a></li>
+          <li><a href="#policy">Delivery Policy</a></li>
+          <li><a href="#contact">Contact Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter-col">
+        <h3>Gourmet Newsletter</h3>
+        <p class="mb-15">Subscribe to receive recipe secrets, discount coupons, and event alerts weekly.</p>
+        <form id="footer-newsletter-form">
+          <div class="input-newsletter-wrap">
+            <input type="email" required placeholder="Email Address">
+            <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Instagram Gallery Footer -->
+    <div class="footer-instagram-gallery">
+      <div class="insta-grid">
+        <a href="#" class="insta-item" style="background-image:url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300&auto=format&fit=crop&q=80')">
+          <span class="insta-overlay"><i class="fa-brands fa-instagram"></i></span>
+        </a>
+        <a href="#" class="insta-item" style="background-image:url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=300&auto=format&fit=crop&q=80')">
+          <span class="insta-overlay"><i class="fa-brands fa-instagram"></i></span>
+        </a>
+        <a href="#" class="insta-item" style="background-image:url('https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=300&auto=format&fit=crop&q=80')">
+          <span class="insta-overlay"><i class="fa-brands fa-instagram"></i></span>
+        </a>
+        <a href="#" class="insta-item" style="background-image:url('https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=300&auto=format&fit=crop&q=80')">
+          <span class="insta-overlay"><i class="fa-brands fa-instagram"></i></span>
+        </a>
+        <a href="#" class="insta-item" style="background-image:url('https://images.unsplash.com/photo-1553618551-fba689030290?w=300&auto=format&fit=crop&q=80')">
+          <span class="insta-overlay"><i class="fa-brands fa-instagram"></i></span>
+        </a>
+        <a href="#" class="insta-item" style="background-image:url('https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=300&auto=format&fit=crop&q=80')">
+          <span class="insta-overlay"><i class="fa-brands fa-instagram"></i></span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom py-20 text-center">
+      <div class="container">
+        <p>&copy; 2026 Quick Bite Pro. ThemeForest HTML Template Demo. Created with ❤️ for Premium Dining.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- ==================== SIDE SHOPPING BAG DRAWER ==================== -->
+  <div id="side-cart-sidebar" class="cart-sidebar">
+    <div class="cart-overlay"></div>
+    <div class="cart-content">
+      <div class="cart-header">
+        <h2>Your Shopping Bag</h2>
+        <button class="cart-close-btn" aria-label="Close cart"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="cart-items" id="side-cart-items-container">
+        <!-- Injected dynamically -->
+      </div>
+      <div class="cart-footer hidden" id="side-cart-footer-billing">
+        <div class="side-cart-bill-row">
+          <span>Subtotal</span>
+          <span id="side-cart-subtotal">$0.00</span>
+        </div>
+        <div class="side-cart-bill-row total-row">
+<span>Subtotal</span>
+          <span id="side-cart-subtotal">$0.00</span>
+        </div>
+        <div class="side-cart-bill-row total-row">
+          <span>Total (incl. tax)</span>
+          <span id="side-cart-total">$0.00</span>
+        </div>
+        <a href="#cart" class="btn btn-secondary btn-block mb-10 cart-close-btn">View Shopping Bag</a>
+        <a href="#checkout" class="btn btn-primary btn-block cart-close-btn">Checkout Now</a>
+      </div>
+    </div>
+  </div>
+  <!-- ==================== PRODUCT DETAILS QUICK MODAL ==================== -->
+  <div id="quick-view-modal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-wrapper">
+      <button class="modal-close-btn" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-grid" id="quick-modal-content-container">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+  <!-- ==================== GLOBAL ORDER CONFIRMATION MODAL ==================== -->
+  <div id="order-confirm-modal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-wrapper success-wrapper">
+      <div class="success-header">
+        <div class="success-ring"><i class="fa-solid fa-circle-check"></i></div>
+        <h2>Order Received!</h2>
+        <p>Your payment/checkout has been successfully verified.</p>
+      </div>
+      <div class="success-body">
+        <div class="order-summary-box">
+          <h4>Order Tracking ID</h4>
+          <p class="bold" id="confirm-order-id">ORD-29910</p>
+          <h4 class="mt-15">Delivery Destination</h4>
+          <p id="confirm-order-address">456 Residential Avenue, Suite 10, Food City</p>
+          <h4 class="mt-15">Simulated Status</h4>
+          <p class="accent-text bold">In Kitchen - Cook starting in 2 mins</p>
+        </div>
+      </div>
+      <a href="#tracking" class="btn btn-primary btn-block close-modal-btn">Track Order Live</a>
+    </div>
+  </div>
+  <!-- JavaScript Application file -->
+  <script src="app.js"></script>
+</body>
+</html>
